@@ -1,0 +1,71 @@
+<html>
+  <head>
+    <style>
+      .balloon {
+        background-color: red;
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        transition: all 0.5s ease;
+      }
+
+      .balloon:hover {
+        width: 205px;
+        height: 205px;
+        background-color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="balloon"></div>
+    <script>
+      const balloon = document.querySelector('.balloon');
+      let color = 'red';
+
+      balloon.addEventListener('click', function() {
+        if (this.offsetWidth >= 420) {
+          this.style.width = '200px';
+          this.style.height = '200px';
+          color = 'red';
+          return;
+        }
+        this.style.width = (this.offsetWidth + 10) + 'px';
+        this.style.height = (this.offsetHeight + 10) + 'px';
+
+        switch (color) {
+          case 'red':
+            color = 'green';
+            break;
+          case 'green':
+            color = 'blue';
+            break;
+          case 'blue':
+            color = 'red';
+            break;
+        }
+        this.style.backgroundColor = color;
+      });
+
+      balloon.addEventListener('mouseout', function() {
+        if (this.offsetWidth <= 200) {
+          return;
+        }
+        this.style.width = (this.offsetWidth - 5) + 'px';
+        this.style.height = (this.offsetHeight - 5) + 'px';
+
+        switch (color) {
+          case 'red':
+            color = 'blue';
+            break;
+          case 'green':
+            color = 'red';
+            break;
+          case 'blue':
+            color = 'green';
+            break;
+        }
+        this.style.backgroundColor = color;
+      });
+    </script>
+  </body>
+</html>
