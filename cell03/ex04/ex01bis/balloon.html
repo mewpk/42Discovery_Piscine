@@ -1,0 +1,77 @@
+<html>
+
+<head>
+  <style>
+    .balloon {
+      background-color: red;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      transition: all 0.5s ease;
+    }
+
+    .balloon:hover {
+      width: 205px;
+      height: 205px;
+      background-color: green;
+    }
+  </style>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+</head>
+
+<body>
+  <div class="balloon"></div>
+  <script>
+    const balloon = $('.balloon');
+    let color = 'red';
+
+    balloon.on('click', function () {
+      $(this).width($(this).width() + 10).height($(this).height() + 10);
+      if ($(this).width() >= 420) {
+        $(this).width(200).height(200);
+        color = 'red';
+        return;
+      }
+      switch (color) {
+        case 'red':
+          color = 'green';
+          break;
+        case 'green':
+          color = 'blue';
+          break;
+        case 'blue':
+          color = 'red';
+          break;
+      }
+      $(this).css('background-color', color);
+    });
+
+    balloon.on('mouseout', function () {
+      if ($(this).width() <= 200) {
+        return;
+      }
+      if ($(this).width() >= 420) {
+        $(this).width(200).height(200);
+        color = 'red';
+        return;
+      }
+      $(this).width($(this).width() - 5).height($(this).height() - 5);
+
+      switch (color) {
+        case 'red':
+          color = 'blue';
+          break;
+        case 'green':
+          color = 'red';
+          break;
+        case 'blue':
+          color = 'green';
+          break;
+      }
+      $(this).css('background-color', color);
+    });
+
+  </script>
+</body>
+
+</html>
