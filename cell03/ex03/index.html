@@ -1,15 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
+    <title>To-Do List</title>
+    <style>
+        body {
+            background-color: rgb(249, 211, 217);
+        }
 
-    
-    <script src="./todojs"></script>
+        .container {
+            width: fit-content;
+            padding-left: 100px;
+            padding-right: 100px;
+            padding-top: 10px;
+            padding-bottom: 20px;
+            border: 3px solid rgb(96, 26, 50);
+            background-color: rgb(250, 187, 187);
+            border-radius: 10%;
+            text-align: center;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        #ft_list {
+            text-align: left;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container" >
+        <h3 style="color: #951313;">To-Do List</h3>
+        <ul style="background-color: pink;
+        border: 1px solid plum; border-radius: 15%;">
+            <div id="ft_list">
+            </div>
+        </ul>
+        <button style="background-color: #951313; color: whitesmoke;" id="newBtn">New</button>
+    </div>
+
+
+    <script src="./todo.js"></script>
 </body>
+
 </html>
