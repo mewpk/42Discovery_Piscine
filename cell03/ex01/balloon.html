@@ -23,15 +23,15 @@
       let color = 'red';
 
       balloon.addEventListener('click', function() {
+       
+        this.style.width = (this.offsetWidth + 10) + 'px';
+        this.style.height = (this.offsetHeight + 10) + 'px';
         if (this.offsetWidth >= 420) {
           this.style.width = '200px';
           this.style.height = '200px';
           color = 'red';
           return;
         }
-        this.style.width = (this.offsetWidth + 10) + 'px';
-        this.style.height = (this.offsetHeight + 10) + 'px';
-
         switch (color) {
           case 'red':
             color = 'green';
