@@ -1,0 +1,54 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+}
+
+.header {
+    background-image: url('https://i3.wp.com/motortrivia.com/wp-content/uploads/2021/09/Mercedes-Benz-EQE-2023-02-1024x576.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header h1 {
+    color: #fff;
+    text-align: center;
+    font-size: 48px;
+}
+
+.section1 {
+    background-color: #000;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.section1 h2 {
+    color: #fff;
+    text-align: center;
+    font-size: 36px;
+}
+
+.section2 {
+    background-image: url('https://mpics.mgronline.com/pics/Images/565000004776701.JPEG');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.section2 h3 {
+    color: #fff;
+    text-align: center;
+    font-size: 24px;
+}
