@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="left" placeholder="Left operand">
+    <select id="operator">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+        <option value="%">%</option>
+    </select>
+    <input type="text" id="right" placeholder="Right operand">
+    <input type="button" id="calculate" value="Try me!">
+    <script>
+        function isPositiveInteger(str) {
+            return /^\d+$/.test(str) && parseInt(str) >= 0;
+        }
+        function calculate() {
+            var left = document.getElementById("left").value;
+            var operator = document.getElementById("operator").value;
+            var right = document.getElementById("right").value;
+
+            if (!isPositiveInteger(left) || !isPositiveInteger(right)) {
+                alert("Error :(");
+                return;
+            }
+
+            left = parseInt(left);
+            right = parseInt(right);
+
+            if ((operator === "/" || operator === "%") && right === 0) {
+                alert("It's over 9000!");
+                return;
+            }
+
+            var result;
+
+            switch (operator) {
+                case "+":
+                    result = left + right;
+                    break;
+                case "-":
+                    result = left - right;
+                    break;
+                case "*":
+                    result = left * right;
+                    break;
+                case "/":
+                    result = left / right;
+                    break;
+                case "%":
+                    result = left % right;
+                    break;
+            }
+
+            alert("Result: " + result);
+            console.log("Result: " + result);
+        }
+
+        var calculateButton = document.getElementById("calculate");
+        calculateButton.addEventListener("click", calculate);
+        setInterval(function () {
+            alert("Please, use me...");
+        }, 30000);
+
+    </script>
+</body>
+
+</html>
