@@ -31,6 +31,8 @@ function saveTasks() {
 }
 
 function loadTasks() {
+  const cookie = document.cookie
+  console.log(cookie)
   const tasksStr = document.cookie.replace(/(?:(?:^|.*;\s*)tasks\s*\=\s*([^;]*).*$)|^.*$/, "$1");
   if (tasksStr) {
     const tasks = JSON.parse(tasksStr);
